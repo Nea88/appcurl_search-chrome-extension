@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+    "name": "Appcurl-searcher",
+    "description": "Appcurl mobile search engine",
+    "version": "0.1",
+    "icons": {
+        "128": "128x128.png",
+        "48": "48x48.png",
+        "32": "32x32.png",
+        "16": "16x16.png"
+    },
+
+
+    "permissions": [
+        "tabs",
+        "http://api.airomo.com/0/appcurl/*",
+        "https://api.airomo.com/0/appcurl/*",
+        "http://appcurl.com/*",
+        "http://airomo.com/apps/"
+    ],
+
+    "content_scripts":[{
+        "matches": [
+            "http://api.airomo.com/0/appcurl/*",
+            "https://api.airomo.com/0/appcurl/*"
+        ],
+        "js": [
+            "main.js",
+            "jquery-1.8.0.min.js"
+        ]
+    }],
+
+    "browser_action": {
+        "default_title": "Search for mobile apps",
+        "default_icon" : "./16x16.png",
+        "default_popup": "popup.html" 
+    }
+
+}
